@@ -17,6 +17,7 @@ useEffect(() => {
     <div>
       {pilots.length?
       <>
+      <h3>Pilots:</h3>
     {pilots.map(pilot => 
       <p>{pilot.name}</p>
     )}

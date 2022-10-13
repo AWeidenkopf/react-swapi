@@ -1,3 +1,4 @@
+import './StarshipDetails.css'
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { getDetails } from "../../services/sw-api"
@@ -18,20 +19,21 @@ const StarshipDetails = () => {
   }, [location.state.starship.url])
 
   return (
-    <div>
+    <div className='card'>
       {starshipDetails.name ?
         <>
           <div className="name">
-            <p><span>Name:</span>{starshipDetails.name}</p>
+          <h3>Name:</h3>
+            <p>{starshipDetails.name}</p>
           </div>
           <div className="model">
-            <p><span>Model:</span>{starshipDetails.model}</p>
-
+            <h3>Model:</h3>
+            <p>{starshipDetails.model}</p>
+          </div>
             <div>
               <PilotList starship={starshipDetails}/>
             </div>
-          </div>
-          <Link to='/'>
+          <Link to='/' className='return'>
             Return
           </Link>
         </>
