@@ -1,3 +1,4 @@
+import './StarshipList.css'
 import { useState, useEffect } from "react"
 import { getAllStarships } from "../../services/sw-api"
 import { Link } from "react-router-dom"
@@ -15,17 +16,18 @@ const StarshipList = () => {
 
   return (
     <>
-      <div>
-        <h1>Starship List</h1>
-        <div>
-          {starships ?
+      <div className='title'>
+        <h1>STARSHIP LIST</h1>
+          </div>
+        <div className='list'>
+          {starships.length ?
           <>
           {starships.map(starship =>
             <Link
               to='/starship'
               key={starship.name}
               state={{ starship }} >
-              <div>
+              <div className='starship-card'>
                 {starship.name}
               </div>
             </Link>
@@ -36,7 +38,6 @@ const StarshipList = () => {
           <p>Loading content ...</p>
           </>
 }
-        </div>
       </div>
     </>
   )
