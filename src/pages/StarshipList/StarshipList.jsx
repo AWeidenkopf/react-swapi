@@ -18,6 +18,8 @@ const StarshipList = () => {
       <div>
         <h1>Starship List</h1>
         <div>
+          {starships ?
+          <>
           {starships.map(starship =>
             <Link
               to='/starship'
@@ -28,6 +30,12 @@ const StarshipList = () => {
               </div>
             </Link>
           )}
+          </>
+          :
+          <>
+          <p>Loading content ...</p>
+          </>
+}
         </div>
       </div>
     </>
